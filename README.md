@@ -8,11 +8,6 @@
 **Скриншот рабочего окна приложения**: окно игрового автомата с визуализацией монет, игрового процесса и интерфейсом пользователя.
 <img width="1479" height="1010" alt="2026-02-02_03-36-03" src="https://github.com/user-attachments/assets/eb0e13e7-cbcd-4d1c-99af-e014fd26147c" />
 
-## Архитектура
-Ниже приведена диаграмма классов, реализующих паттерн "Наблюдатель" (Observer pattern), которая отражает архитектуру модели приложения:
-
-
-
 ## Зависимости
 Для корректной работы приложения необходимо наличие следующих зависимостей:
 
@@ -65,25 +60,28 @@
    • Проект можно использовать и как обучающий пример паттерна Chain of Responsibility в JavaFX.
 
 ## Проблемы
+1. Совместимость с Java и JavaFX:  
+  • Приложение требует JDK 11+ и отдельной установки JavaFX 17+. На старых системах или при неправильном подключении библиотек возможны сбои или отсутствие графического интерфейса.
+  • При запуске в IDE могут быть сложности с указанием путей к модулям JavaFX (особенно в IntelliJ IDEA, Eclipse).
 
-1. Отсутствие устойчивых тестов пользовательского интерфейса
-2. Нет сохранения состояния
-   При закрытии приложения все настройки и состояния компонентов (например, показания часов или установленный интервал будильника) теряются.
-3. Нет поддержки масштабируемости
-   Архитектура рассчитана на фиксированное число компонентов-наблюдателей (три), динамическое добавление новых observer-ов пользовательским способом не предусмотрено.
+2. Файлы-ресурсы:  
+  Отсутствие или повреждение изображений в папке resources/images приведет к ошибкам отображения (пропадут анимации, интерфейс станет неполноценным).
+
+3. Графика и производительность:  
+  • Высокое разрешение или частота анимаций могут нагружать слабые ПК или ноутбуки.
+  • При запуске на системах без аппаратного ускорения JavaFX — возможны лаги и снижение плавности.
 
 ## Получение справочной информации
 
-
-1. Для помощи и обсуждения используйте систему Issues (https://github.com/Ekaterina01122002/Task-7.-/issues) на GitHub.
-2. Подробная документация и примеры использования доступны в README (http://readme.md/) и Wiki (https://github.com/Ekaterina01122002/Task-7.-/wiki) проекта.
+1. Для помощи и обсуждения используйте систему Issues (https://github.com/Ekaterina01122002/Task-14.-/issues) на GitHub.
+2. Подробная документация и примеры использования доступны в README (http://readme.md/) и Wiki (https://github.com/Ekaterina01122002/Task-14.-/wiki) проекта.
 3. Для срочных вопросов — пишите на e-mail, указанный в профиле автора.
 
 
 **Другое**
 
 Если у вас возникли вопросы, проблемы или вы хотите сообщить об ошибке, пожалуйста, создайте новое обращение в системе отслеживания проблем (Issues) этого репозитория.  
-Ссылка: Issues (https://github.com/Ekaterina01122002/Task-7.-/issues)
+Ссылка: Issues (https://github.com/Ekaterina01122002/Task-14.-/issues)
 
 ## Приглашение к сотрудничеству
 
@@ -104,7 +102,7 @@
 ----
 
 ## Open source licensing info
-2. [LICENSE]([LICENSE](https://github.com/Ekaterina01122002/Task-7.-/blob/main/LICENSE)
+2. [LICENSE]([LICENSE](https://github.com/Ekaterina01122002/Task-14.-/blob/main/LICENSE).
 
 
 
@@ -112,20 +110,13 @@
 
 ## Источники и справочники
 
-1. Проекты, которые вдохновили
-• Clock App (JavaFX Sample):  
-  Пример реализации часов на JavaFX из официальных демонстраций OpenJFX.
-• UML Observer pattern sample (GitHub):  
-  Реализации паттерна “Наблюдатель” в разных языках и фреймворках, опубликованные на GitHub.
-• JavaFX Alarm Clock (GitHub):  
-  Открытые учебные проекты “будильников” и “таймеров” на JavaFX.
-2. Связанные проекты
-   • JavaFX Ensemble и official samples:  
-  https://github.com/openjfx/samples  
-  Коллекция демонстрационных JavaFX-приложений.
-• Design Patterns Examples (Java):  
-  https://github.com/iluwatar/java-design-patterns  
-  Расширенная коллекция примеров паттернов (в том числе Observer) на Java.
-3. Книги, статьи, доклады или другие источники, которые повлияли на создание проекта.
-   • Wikipedia — Observer pattern:  
-  https://en.wikipedia.org/wiki/Observer_pattern
+Книги, статьи, доклады или другие источники, которые повлияли на создание проекта.
+   1. Фримен Э., Фримен Э., Робсон Э., Сьерра К. "Паттерны проектирования" ("Head First Design Patterns"), 2-е издание  
+   2. docs.oracle.com: JavaFX documentation and tutorials (https://docs.oracle.com/javase/8/javase-client-technologies.htm)
+   3. Refactoring.Guru: Цепочка обязанностей (Chain of Responsibility) на Java (https://refactoring.guru/ru/design-patterns/chain-of-responsibility/java/example)
+   4. Серия статей на Хабр: “Миграция с Swing на JavaFX. Практика”, “JavaFX для начинающих. Анимация и спрайты”
+   5. Онлайн-курс «Java. Основы. JavaFX» (https://stepik.org/course/187/info)
+   6. Code.Makery tutorials: JavaFX Tutorial for Beginners (https://code.makery.ch/library/javafx-tutorial/ru/)
+   7. Демо-примеры анимаций: официальный репозиторий OpenJFX Samples (https://github.com/openjfx/samples)
+   8. Stack Overflow: обсуждения по паттернам и игровым циклам в JavaFX
+
